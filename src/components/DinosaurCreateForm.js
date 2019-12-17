@@ -5,26 +5,18 @@ class DinosaurCreateForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      species: "",
-      foodType: "",
+      species: null,
       paddock: null
     }
 
     this.handleSpecies = this.handleSpecies.bind(this)
-    this.handleFoodType = this.handleFoodType.bind(this)
     this.handlePaddock= this.handlePaddock.bind(this)
     this.handleSubmit= this.handleSubmit.bind(this)
   }
 
   handleSpecies(event){
     this.setState(
-      {species: event.target.value}
-    )
-  }
-
-  handleFoodType(event){
-    this.setState(
-      {foodType: event.target.value}
+      {species: "http://localhost:8080/species/" + event.target.value}
     )
   }
 
@@ -48,16 +40,20 @@ class DinosaurCreateForm extends Component {
     }
   )
 
+  const speciesNodes = this.props.species.map((species, index) => {
+    return(
+      <option key={index} value={species.id}>{species.name}</option>
+    )
+  }
+)
+
   return(
     <div>
     <h1>Add a new dinosaur</h1>
     <form onSubmit={this.handleSubmit}>
-    <label id="species" value="species">Enter species: </label>
-    <input id="species" type="text" onChange={this.handleSpecies}/>
-    <select onChange={this.handleFoodType}>
-    <option disabled selected>Choose food type</option>
-    <option value="meat">Meat</option>
-    <option value="plants">Plants</option>
+    <select onChange={this.handleSpecies}>
+    <option disabled selected>Choose species</option>
+    {speciesNodes}
     </select>
     <select onChange={this.handlePaddock}>
     <option disabled selected>Choose paddock</option>

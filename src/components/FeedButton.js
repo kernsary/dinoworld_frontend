@@ -31,7 +31,7 @@ class FeedButton extends Component{
 
   killDinoIfNotFed(){
     if(this.state.showBoolean){
-      if(this.props.dinosaur.foodType === "meat" && this.props.dinosaurs.length >= 2){
+      if(this.props.dinosaur._embedded.species.foodType === "meat" && this.props.dinosaurs.length >= 2){
         const otherDinos = this.props.dinosaurs.filter(dinosaur => dinosaur.id !== this.props.dinosaur.id)
         this.props.onDelete(otherDinos[0].id)
         this.buttonDisappear()
