@@ -1,3 +1,13 @@
+This is the frontend end of the 'DinoWorld' app, created using React.js. To run the app, first find the 'dinoworld_backend' repo and follow the instructions in the ReadMe file to run that.
+
+Then, upload this folder and install the required dependencies using npm i.
+
+Once that is done, use npm start to run the app.
+
+You'll have to feed the dinosaurs and keep them fed to play the game. If you manage to keep 19 dinosaurs alive, you win the game.
+
+-------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
