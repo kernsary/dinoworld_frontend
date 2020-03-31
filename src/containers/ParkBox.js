@@ -82,7 +82,7 @@ class ParkBox extends Component {
             <div className="body-wrapper">
                 <div className="win-item">
                   <h1>You Win!</h1>
-                  <img src="https://i.ya-webdesign.com/images/baby-dinosaur-png-8.png"/>
+                  <img src="https://i.ya-webdesign.com/images/baby-dinosaur-png-8.png" alt=""/>
                 </div>
             </div>
           )

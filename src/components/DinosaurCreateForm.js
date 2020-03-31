@@ -39,7 +39,7 @@ class DinosaurCreateForm extends Component {
   handleSubmit(event){
     event.preventDefault()
     const selectedPaddock = this.props.paddocks.filter(paddock => {
-      return paddock.id == this.state.selectedPaddockId
+      return paddock.id === this.state.selectedPaddockId
     })[0]
     if(selectedPaddock.dinosaurs.length < 4)
     {this.props.createDinosaur({
